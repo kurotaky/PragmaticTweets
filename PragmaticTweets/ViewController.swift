@@ -9,7 +9,7 @@
 import UIKit
 import Social
 
-public class ViewController: UIViewController {
+public class ViewController: UITableViewController {
 
     @IBOutlet public weak var twitterWebView: UIWebView!
 
@@ -44,6 +44,24 @@ public class ViewController: UIViewController {
         self.twitterWebView.loadRequest(NSURLRequest(
             URL: NSURL(string: "http://www.twitter.com/pragprog")!)
         )
+    }
+    
+    public override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 5
+    }
+    
+    public override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Section \(section)"
+    }
+    
+    public override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return section + 1
+    }
+    
+    public override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
+        cell.textLabel.text = "Row \(indexPath.row)"
+        return cell
     }
 }
 

@@ -1,69 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="R0h-EG-mMt">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PragmaticTweets" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95C-Di-hsp">
-                                <rect key="frame" x="260" y="58" width="80" height="30"/>
-                                <state key="normal" title="Send Tweet">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleTweetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EfO-G0-Hae"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTQ-5O-L2G">
-                                <rect key="frame" x="242" y="20" width="116" height="30"/>
-                                <state key="normal" title="Show My Tweets">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleShowMyTweetsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="68v-CR-pES"/>
-                                </connections>
-                            </button>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uAL-ud-knX">
-                                <rect key="frame" x="0.0" y="96" width="600" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="uAL-ud-knX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4Tn-6o-jPf"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uAL-ud-knX" secondAttribute="bottom" id="7ZV-lw-YC3"/>
-                            <constraint firstAttribute="trailing" secondItem="uAL-ud-knX" secondAttribute="trailing" id="AkZ-ao-A36"/>
-                            <constraint firstAttribute="centerX" secondItem="KTQ-5O-L2G" secondAttribute="centerX" id="Bbs-Bx-RJT"/>
-                            <constraint firstItem="KTQ-5O-L2G" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="EKR-yH-JKQ"/>
-                            <constraint firstItem="uAL-ud-knX" firstAttribute="top" secondItem="95C-Di-hsp" secondAttribute="bottom" constant="8" id="KEi-Tp-ftH"/>
-                            <constraint firstAttribute="centerX" secondItem="95C-Di-hsp" secondAttribute="centerX" id="Y2u-h2-YxK"/>
-                            <constraint firstItem="95C-Di-hsp" firstAttribute="top" secondItem="KTQ-5O-L2G" secondAttribute="bottom" constant="8" id="pYr-e2-x9A"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="twitterWebView" destination="uAL-ud-knX" id="kSC-fr-J7d"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
-        <!--Table View Controller-->
         <scene sceneID="fvy-31-6hn">
             <objects>
-                <tableViewController id="R0h-EG-mMt" sceneMemberID="viewController">
+                <tableViewController id="R0h-EG-mMt" customClass="ViewController" customModule="PragmaticTweets" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VhK-lR-fCo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -75,14 +21,14 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="R0h-EG-mMt" id="yRu-S7-kMW"/>
-                            <outlet property="delegate" destination="R0h-EG-mMt" id="a6u-JS-qJj"/>
+                            <outlet property="dataSource" destination="R0h-EG-mMt" id="xQ8-dC-Iht"/>
+                            <outlet property="delegate" destination="R0h-EG-mMt" id="M6D-eN-Iuf"/>
                         </connections>
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v07-UU-rhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124.5" y="597"/>
+            <point key="canvasLocation" x="169.5" y="482"/>
         </scene>
     </scenes>
 </document>
