@@ -14,6 +14,8 @@
 		2129FBE019DCD72A00DDDCAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2129FBDF19DCD72A00DDDCAF /* Images.xcassets */; };
 		2129FBE319DCD72A00DDDCAF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2129FBE119DCD72A00DDDCAF /* LaunchScreen.xib */; };
 		2129FBEF19DCD72A00DDDCAF /* PragmaticTweetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2129FBEE19DCD72A00DDDCAF /* PragmaticTweetsTests.swift */; };
+		215584321A0C49F900A0BC38 /* ParsedTweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215584311A0C49F900A0BC38 /* ParsedTweetCell.swift */; };
+		215A65DE1A0AF5F7009D82FA /* ParsedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215A65DD1A0AF5F7009D82FA /* ParsedTweet.swift */; };
 		21A4D18B1A01BD9500C2DD36 /* WebViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A4D18A1A01BD9500C2DD36 /* WebViewTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		2129FBE819DCD72A00DDDCAF /* PragmaticTweetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PragmaticTweetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2129FBED19DCD72A00DDDCAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2129FBEE19DCD72A00DDDCAF /* PragmaticTweetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PragmaticTweetsTests.swift; sourceTree = "<group>"; };
+		215584311A0C49F900A0BC38 /* ParsedTweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTweetCell.swift; sourceTree = "<group>"; };
+		215A65DD1A0AF5F7009D82FA /* ParsedTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTweet.swift; sourceTree = "<group>"; };
 		21A4D18A1A01BD9500C2DD36 /* WebViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +95,8 @@
 				2129FBDF19DCD72A00DDDCAF /* Images.xcassets */,
 				2129FBE119DCD72A00DDDCAF /* LaunchScreen.xib */,
 				2129FBD619DCD72A00DDDCAF /* Supporting Files */,
+				215A65DD1A0AF5F7009D82FA /* ParsedTweet.swift */,
+				215584311A0C49F900A0BC38 /* ParsedTweetCell.swift */,
 			);
 			path = PragmaticTweets;
 			sourceTree = "<group>";
@@ -223,6 +229,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				215584321A0C49F900A0BC38 /* ParsedTweetCell.swift in Sources */,
+				215A65DE1A0AF5F7009D82FA /* ParsedTweet.swift in Sources */,
 				2129FBDB19DCD72A00DDDCAF /* ViewController.swift in Sources */,
 				2129FBD919DCD72A00DDDCAF /* AppDelegate.swift in Sources */,
 			);
