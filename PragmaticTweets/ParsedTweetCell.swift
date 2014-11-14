@@ -9,6 +9,10 @@
 import UIKit
 
 class ParsedTweetCell: UITableViewCell {
+    @IBOutlet var avatarImageView: UIImageView!
+    @IBOutlet var userNameLabel: UILabel!
+    @IBOutlet var tweetTextLabel: UILabel!
+    @IBOutlet var createdAtLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
