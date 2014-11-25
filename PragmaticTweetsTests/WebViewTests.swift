@@ -35,7 +35,7 @@ class WebViewTests: XCTestCase, UIWebViewDelegate {
     }
     
     func testAutomaticWebLoad() {
-        if let viewController = UIApplication.sharedApplication().windows[0].rootViewController as? ViewController {
+        if let viewController = UIApplication.sharedApplication().windows[0].rootViewController as? RootViewController {
             viewController.twitterWebView.delegate = self
             self.loadWebViewExpectation = expectationWithDescription("web view auto-load test")
             waitForExpectationsWithTimeout(5.0, handler: nil)

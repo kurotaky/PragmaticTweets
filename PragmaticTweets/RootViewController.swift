@@ -12,7 +12,7 @@ import Social
 
 let defaultAvatarURL = NSURL(string: "https://abs.twimg.com/sticky/default_profile_images/" + "default_profile_6_200x200.png")
 
-public class ViewController: UITableViewController {
+public class RootViewController: UITableViewController, TwitterAPIRequestDelegate {
     
     var parsedTweets : Array <ParsedTweet> = [
         ParsedTweet(tweetText:"iOS SDK Development now in print. " + "Swift programming FTW!",
@@ -69,44 +69,53 @@ public class ViewController: UITableViewController {
         cell.tweetTextLabel.text = parsedTweet.tweetText
         cell.createdAtLabel.text = parsedTweet.createdAt
         if parsedTweet.userAvatarURL != nil {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                {() -> Void in
+                    let avatarImage = UIImage(data: NSData (
+                        contentsOfURL: parsedTweet.userAvatarURL!)!)
+                    dispatch_async(dispatch_get_main_queue(),
+                        {
+                            if cell.userNameLabel.text == parsedTweet.userName {
+                                cell.avatarImageView.image = avatarImage
+                            } else {
+                                println("oops, wrong cell, never mind")
+                            }
+                    })
+                }
+            )
             cell.avatarImageView.image = UIImage (data: NSData(contentsOfURL: parsedTweet.userAvatarURL!)!)
         }
         return cell
     }
     
     func reloadTweets() {
-        let accountStore = ACAccountStore()
-        let twitterAccountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
-        accountStore.requestAccessToAccountsWithType(twitterAccountType, options: nil, completion: {
-            (Bool granted, NSError error) -> Void in
-            if (!granted) {
-                println("account access not granted")
-            } else {
-                println("account access granted")
-                let twitterAccounts = accountStore.accountsWithAccountType(twitterAccountType)
-                if twitterAccounts.count == 0 {
-                    println("no twitter accounts configured")
-                    return
-                } else {
-                    let twitterParams = [
-                        "count" : "100"
-                    ]
-                    let twitterAPIURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
-                    let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: SLRequestMethod.GET, URL: twitterAPIURL, parameters: twitterParams)
-                    request.account = twitterAccounts[0] as ACAccount
-                    request.performRequestWithHandler({
-                        (NSData data, NSHTTPURLResponse urlResponse, NSError error) -> Void in
-                        self.handleTweeterData(data, urlResponse: urlResponse, error: error)
-                    })
-                }
-            }
-        })
+        let twitterParams : Dictionary = ["count":"100"]
+        let twitterAPIURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
+        
+        let request = TwitterAPIRequest()
+        request.sendTwitterRequest(twitterAPIURL, params: twitterParams, delegate: self)
     }
 
-    func handleTweeterData(data: NSData!, urlResponse: NSHTTPURLResponse!, error: NSError!) {
+    func handleTwitterData(data: NSData!, urlResponse: NSHTTPURLResponse!, error: NSError!, fromRequest: TwitterAPIRequest!) {
         if let dataValue = data {
             var parseError : NSError? = nil
             let jsonObject : AnyObject? = NSJSONSerialization.JSONObjectWithData(dataValue, options: NSJSONReadingOptions(0), error: &parseError)
+            if parseError != nil {
+                return
+            }
+            if let jsonArray = jsonObject as? Array<Dictionary<String, AnyObject>> {
+                self.parsedTweets.removeAll(keepCapacity: true)
+                for tweetDict in jsonArray {
+                    let parsedTweet = ParsedTweet()
+                    parsedTweet.tweetText = tweetDict["text"] as? NSString
+                    parsedTweet.createdAt = tweetDict["created_at"] as? NSString
+                    let userDict = tweetDict["user"] as NSDictionary
+                    parsedTweet.userName = userDict["name"] as? NSString
+                    parsedTweet.userAvatarURL = NSURL(string: userDict["profile_image_url"] as NSString!)
+                    self.parsedTweets.append(parsedTweet)
+                }
+                dispatch_async(dispatch_get_main_queue(), { ()-> Void in self.tableView.reloadData() })
+            }
             println("JSON error: \(parseError)\nJSON response: \(jsonObject)")
         } else {
             println("handleTweetData recieved no data")

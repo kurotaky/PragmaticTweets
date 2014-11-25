@@ -21,4 +21,11 @@ class ParsedTweet: NSObject {
         self.createdAt = createdAt
         self.userAvatarURL = userAvatarURL
     }
+    override init() {
+        super.init()
+        self.tweetText = ""
+        self.userName = ""
+        self.createdAt = ""
+        self.userAvatarURL = nil
+    }
 }
