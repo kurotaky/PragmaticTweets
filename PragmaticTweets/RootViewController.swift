@@ -112,6 +112,7 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
                     let userDict = tweetDict["user"] as NSDictionary
                     parsedTweet.userName = userDict["name"] as? NSString
                     parsedTweet.userAvatarURL = NSURL(string: userDict["profile_image_url"] as NSString!)
+                    parsedTweet.tweetIdString = tweetDict["id_str"] as? NSString
                     self.parsedTweets.append(parsedTweet)
                 }
                 dispatch_async(dispatch_get_main_queue(), { ()-> Void in self.tableView.reloadData() })
@@ -119,6 +120,35 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
             println("JSON error: \(parseError)\nJSON response: \(jsonObject)")
         } else {
             println("handleTweetData recieved no data")
+        }
+    }
+    @IBAction func handleTweetButtonTapped(sender: AnyObject) {
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
+            let tweetVC = SLComposeViewController (forServiceType: SLServiceTypeTwitter)
+            let message = NSBundle.mainBundle().localizedStringForKey(
+                "I just finished the first project in iOS SDK Development. #pragsios",
+                value: "",
+                table: nil)
+            tweetVC.setInitialText(message)
+            tweetVC.completionHandler = {
+                (SLComposeViewControllerResult result) -> Void in
+                if result == SLComposeViewControllerResult.Done {
+                    self.reloadTweets()
+                }
+            }
+            self.presentViewController(tweetVC, animated: true, completion: nil)
+        } else {
+            println ("Can't send tweet")
+        }
+    }
+    
+    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showTweetDetailsSegue" {
+            if let tweetDetailVC = segue.destinationViewController as? TweetDetailViewController {
+                let row = self.tableView!.indexPathForSelectedRow()!.row
+                let parsedTweet = parsedTweets [row] as ParsedTweet
+                tweetDetailVC.tweetIdString = parsedTweet.tweetIdString
+            }
         }
     }
 }
