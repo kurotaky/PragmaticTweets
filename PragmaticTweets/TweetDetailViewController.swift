@@ -90,6 +90,14 @@ class TweetDetailViewController: UIViewController, TwitterAPIRequestDelegate {
             println ("handleTwitterData received no data")
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
+        if (segue!.identifier == "showUserDetailsSegue") {
+            if let userDetailVC = segue!.destinationViewController as? UserDetailViewController {
+                userDetailVC.screenName = self.userScreenNameLabel.text
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -375,6 +375,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="hdc-I3-XaP" kind="unwind" unwindAction="unwindToTweetDetailVC:" id="yEO-MW-xyP"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zlb-13-6ak">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -412,11 +415,6 @@
                                 <exclude reference="Zlb-13-6ak"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="FWq-HL-md8"/>
-                                <exclude reference="Prs-uK-uCd"/>
-                                <exclude reference="Wvz-8m-63f"/>
-                                <exclude reference="DlP-1e-V6D"/>
-                                <exclude reference="iBL-fb-dL6"/>
                                 <exclude reference="7EG-Uf-wJd"/>
                                 <exclude reference="gQC-MB-P9y"/>
                                 <exclude reference="l5K-j6-Cpc"/>
@@ -426,8 +424,13 @@
                                 <exclude reference="3I5-2q-E2e"/>
                                 <exclude reference="ApA-8C-4wb"/>
                                 <exclude reference="erb-MU-gaP"/>
+                                <exclude reference="FWq-HL-md8"/>
+                                <exclude reference="Prs-uK-uCd"/>
+                                <exclude reference="Wvz-8m-63f"/>
                                 <exclude reference="eCC-ml-8Td"/>
                                 <exclude reference="p6F-sX-cIW"/>
+                                <exclude reference="DlP-1e-V6D"/>
+                                <exclude reference="iBL-fb-dL6"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -440,11 +443,6 @@
                                 <include reference="Zlb-13-6ak"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="FWq-HL-md8"/>
-                                <include reference="Prs-uK-uCd"/>
-                                <include reference="Wvz-8m-63f"/>
-                                <include reference="DlP-1e-V6D"/>
-                                <include reference="iBL-fb-dL6"/>
                                 <include reference="7EG-Uf-wJd"/>
                                 <include reference="gQC-MB-P9y"/>
                                 <include reference="l5K-j6-Cpc"/>
@@ -454,8 +452,13 @@
                                 <include reference="3I5-2q-E2e"/>
                                 <include reference="ApA-8C-4wb"/>
                                 <include reference="erb-MU-gaP"/>
+                                <include reference="FWq-HL-md8"/>
+                                <include reference="Prs-uK-uCd"/>
+                                <include reference="Wvz-8m-63f"/>
                                 <include reference="eCC-ml-8Td"/>
                                 <include reference="p6F-sX-cIW"/>
+                                <include reference="DlP-1e-V6D"/>
+                                <include reference="iBL-fb-dL6"/>
                             </mask>
                         </variation>
                     </view>
@@ -468,6 +471,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kow-Tl-o8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hdc-I3-XaP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1587" y="1449"/>
         </scene>
