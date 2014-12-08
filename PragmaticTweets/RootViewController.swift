@@ -117,7 +117,8 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
                 }
                 dispatch_async(dispatch_get_main_queue(), { ()-> Void in self.tableView.reloadData() })
             }
-            println("JSON error: \(parseError)\nJSON response: \(jsonObject)")
+            // println("JSON error: \(parseError)\nJSON response: \(jsonObject)")
+            println("ほおおおおおおおおおおおおおおおおおおおお")
         } else {
             println("handleTweetData recieved no data")
         }
@@ -143,6 +144,7 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
     }
     
     override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        println("segue.identifier = \(segue.identifier)")
         if segue.identifier == "showTweetDetailsSegue" {
             if let tweetDetailVC = segue.destinationViewController as? TweetDetailViewController {
                 let row = self.tableView!.indexPathForSelectedRow()!.row

@@ -21,6 +21,7 @@ class TweetDetailViewController: UIViewController, TwitterAPIRequestDelegate {
     @IBOutlet weak var userScreenNameLabel: UILabel!
     @IBOutlet weak var tweetTextLabel: UILabel!
     @IBOutlet weak var tweetLocationMapView: MKMapView!
+    @IBAction func unwindToTweetDetailVC (segue: UIStoryboardSegue?) {}
 
     func reloadTweetDetails() {
         if tweetIdString == nil {
@@ -34,7 +35,7 @@ class TweetDetailViewController: UIViewController, TwitterAPIRequestDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        println("うえーーーーーーーーーーい")
         // Do any additional setup after loading the view.
     }
 

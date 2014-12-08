@@ -15,7 +15,6 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
     @IBOutlet weak var userScreenNameLabel: UILabel!
     @IBOutlet weak var userLocationLabel: UILabel!
     @IBOutlet weak var userDescriptionLabel: UILabel!
-    @IBAction func unwindToTweetDetailVC (segue: UIStoryboardSegue?) {}
     var screenName : String?
 
     override func viewDidLoad() {
