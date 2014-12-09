@@ -20,6 +20,8 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        println("UserDetailViewController \(__FUNCTION__)")
+
         // Do any additional setup after loading the view.
     }
 
