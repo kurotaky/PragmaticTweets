@@ -43,6 +43,8 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
         var refresher = UIRefreshControl()
         refresher.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refresher
+        
+        println("RootViewController \(__FUNCTION__)")
     }
 
     override public func didReceiveMemoryWarning() {
