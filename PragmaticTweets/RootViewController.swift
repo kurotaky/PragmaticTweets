@@ -90,6 +90,19 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
         return cell
     }
     
+    public override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let parsedTweet = parsedTweets[indexPath.row]
+        if self.splitViewController != nil {
+            if (self.splitViewController!.viewControllers.count > 1) {
+                if let tweetDetailNav = self.splitViewController!.viewControllers[1] as? UINavigationController {
+                    if let tweetDetailVC = tweetDetailNav.viewControllers[0] as? TweetDetailViewController {
+                        tweetDetailVC.tweetIdString = parsedTweet.tweetIdString
+                    }
+                }
+            }
+        }
+    }
+    
     func reloadTweets() {
         let twitterParams : Dictionary = ["count":"100"]
         let twitterAPIURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
