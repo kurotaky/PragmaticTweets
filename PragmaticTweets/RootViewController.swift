@@ -12,7 +12,7 @@ import Social
 
 let defaultAvatarURL = NSURL(string: "https://abs.twimg.com/sticky/default_profile_images/" + "default_profile_6_200x200.png")
 
-public class RootViewController: UITableViewController, TwitterAPIRequestDelegate {
+public class RootViewController: UITableViewController, TwitterAPIRequestDelegate, UISplitViewControllerDelegate {
     
     var parsedTweets : Array <ParsedTweet> = [
         ParsedTweet(tweetText:"iOS SDK Development now in print. " + "Swift programming FTW!",
@@ -45,6 +45,9 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
         self.refreshControl = refresher
         
         println("RootViewController \(__FUNCTION__)")
+        if self.splitViewController != nil {
+            self.splitViewController!.delegate = self
+        }
     }
 
     override public func didReceiveMemoryWarning() {
@@ -98,6 +101,11 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
                     if let tweetDetailVC = tweetDetailNav.viewControllers[0] as? TweetDetailViewController {
                         tweetDetailVC.tweetIdString = parsedTweet.tweetIdString
                     }
+                }
+            } else {
+                if let detailVC = self.storyboard!.instantiateViewControllerWithIdentifier("TweetDetailVC") as? TweetDetailViewController {
+                    detailVC.tweetIdString = parsedTweet.tweetIdString
+                    self.splitViewController!.showDetailViewController(detailVC, sender: self)
                 }
             }
         }
@@ -167,5 +175,9 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
                 tweetDetailVC.tweetIdString = parsedTweet.tweetIdString
             }
         }
+    }
+    
+    func splitViewController(_splitViewController: UISplitViewController!, collapseSecondaryViewController secondaryViewController: UIViewController!, ontoPrimaryViewController primaryViewController: UIViewController!) -> Bool {
+        return true
     }
 }
