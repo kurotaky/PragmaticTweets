@@ -16,10 +16,12 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
     @IBOutlet weak var userLocationLabel: UILabel!
     @IBOutlet weak var userDescriptionLabel: UILabel!
     var screenName : String?
+    
+    @IBAction func unwindToUserDetailVC (segue : UIStoryboardSegue) {
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         println("UserDetailViewController \(__FUNCTION__)")
 
         // Do any additional setup after loading the view.

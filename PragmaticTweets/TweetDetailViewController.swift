@@ -35,7 +35,6 @@ class TweetDetailViewController: UIViewController, TwitterAPIRequestDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("うえーーーーーーーーーーい")
         // Do any additional setup after loading the view.
     }
 

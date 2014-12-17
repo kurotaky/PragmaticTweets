@@ -21,6 +21,7 @@
 		215A65DE1A0AF5F7009D82FA /* ParsedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215A65DD1A0AF5F7009D82FA /* ParsedTweet.swift */; };
 		21A4D18B1A01BD9500C2DD36 /* WebViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A4D18A1A01BD9500C2DD36 /* WebViewTests.swift */; };
 		21EF47971A2E9133001A2AFF /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EF47961A2E9133001A2AFF /* UserDetailViewController.swift */; };
+		21FC010F1A3A726600E42932 /* SizeClassOverrideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC010E1A3A726600E42932 /* SizeClassOverrideViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		215A65DD1A0AF5F7009D82FA /* ParsedTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTweet.swift; sourceTree = "<group>"; };
 		21A4D18A1A01BD9500C2DD36 /* WebViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewTests.swift; sourceTree = "<group>"; };
 		21EF47961A2E9133001A2AFF /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		21FC010E1A3A726600E42932 /* SizeClassOverrideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeClassOverrideViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		2129FBD519DCD72A00DDDCAF /* PragmaticTweets */ = {
 			isa = PBXGroup;
 			children = (
+				21FC010D1A3A723D00E42932 /* Size Class Override */,
 				21EF47951A2E910B001A2AFF /* User Detail VC */,
 				2101E51A1A26AE3E00B922EB /* Tweet Detail VC */,
 				2129FBD819DCD72A00DDDCAF /* AppDelegate.swift */,
@@ -169,6 +172,14 @@
 				21EF47961A2E9133001A2AFF /* UserDetailViewController.swift */,
 			);
 			name = "User Detail VC";
+			sourceTree = "<group>";
+		};
+		21FC010D1A3A723D00E42932 /* Size Class Override */ = {
+			isa = PBXGroup;
+			children = (
+				21FC010E1A3A726600E42932 /* SizeClassOverrideViewController.swift */,
+			);
+			name = "Size Class Override";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 				215584321A0C49F900A0BC38 /* ParsedTweetCell.swift in Sources */,
 				21270A861A1EC1E50085368A /* TwitterAPIRequestDelegate.swift in Sources */,
 				21EF47971A2E9133001A2AFF /* UserDetailViewController.swift in Sources */,
+				21FC010F1A3A726600E42932 /* SizeClassOverrideViewController.swift in Sources */,
 				215A65DE1A0AF5F7009D82FA /* ParsedTweet.swift in Sources */,
 				2129FBDB19DCD72A00DDDCAF /* RootViewController.swift in Sources */,
 				21270A841A1EBFE00085368A /* TwitterAPIRequest.swift in Sources */,
