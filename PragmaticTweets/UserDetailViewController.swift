@@ -58,8 +58,8 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
                         self.userScreenNameLabel.text = tweetDict["screen_name"] as? NSString
                         self.userLocationLabel.text = tweetDict["location"] as? NSString
                         self.userDescriptionLabel.text = tweetDict["description"] as? NSString
-                        let userImageURL = NSURL(string: tweetDict["profile_image_url"] as NSString!)
-                        self.userImageView.image = UIImage(data: NSData(contentsOfURL: userImageURL!)!)
+                        self.userImageURL = NSURL(string: tweetDict["profile_image_url"] as NSString!)
+                        self.userImageView.image = UIImage(data: NSData(contentsOfURL: self.userImageURL!)!)
                 })
             }
         }
