@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2101E51C1A26AE7B00B922EB /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2101E51B1A26AE7B00B922EB /* TweetDetailViewController.swift */; };
+		2111C4791A425632006E744A /* UserImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2111C4781A425632006E744A /* UserImageDetailViewController.swift */; };
 		211ECDB519FF197F001692EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 211ECDB719FF197F001692EC /* Localizable.strings */; };
 		21270A841A1EBFE00085368A /* TwitterAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21270A831A1EBFE00085368A /* TwitterAPIRequest.swift */; };
 		21270A861A1EC1E50085368A /* TwitterAPIRequestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21270A851A1EC1E50085368A /* TwitterAPIRequestDelegate.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		2101E51B1A26AE7B00B922EB /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
+		2111C4781A425632006E744A /* UserImageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserImageDetailViewController.swift; sourceTree = "<group>"; };
 		211ECDB119FDCD1F001692EC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		211ECDB219FDCD1F001692EC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		211ECDB619FF197F001692EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 			name = "Tweet Detail VC";
 			sourceTree = "<group>";
 		};
+		2111C4771A4255FA006E744A /* User Image Detail VC */ = {
+			isa = PBXGroup;
+			children = (
+				2111C4781A425632006E744A /* UserImageDetailViewController.swift */,
+			);
+			name = "User Image Detail VC";
+			sourceTree = "<group>";
+		};
 		21270A811A1EBD220085368A /* Root VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +135,7 @@
 		2129FBD519DCD72A00DDDCAF /* PragmaticTweets */ = {
 			isa = PBXGroup;
 			children = (
+				2111C4771A4255FA006E744A /* User Image Detail VC */,
 				21FC010D1A3A723D00E42932 /* Size Class Override */,
 				21EF47951A2E910B001A2AFF /* User Detail VC */,
 				2101E51A1A26AE3E00B922EB /* Tweet Detail VC */,
@@ -290,6 +301,7 @@
 				21FC010F1A3A726600E42932 /* SizeClassOverrideViewController.swift in Sources */,
 				215A65DE1A0AF5F7009D82FA /* ParsedTweet.swift in Sources */,
 				2129FBDB19DCD72A00DDDCAF /* RootViewController.swift in Sources */,
+				2111C4791A425632006E744A /* UserImageDetailViewController.swift in Sources */,
 				21270A841A1EBFE00085368A /* TwitterAPIRequest.swift in Sources */,
 				2101E51C1A26AE7B00B922EB /* TweetDetailViewController.swift in Sources */,
 				2129FBD919DCD72A00DDDCAF /* AppDelegate.swift in Sources */,

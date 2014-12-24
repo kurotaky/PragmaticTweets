@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tud-WD-2Bv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tud-WD-2Bv">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -183,7 +183,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="FQM-Uw-Smf" kind="show" id="3rN-t5-QhQ"/>
+                                    <segue destination="FQM-Uw-Smf" kind="show" identifier="showUserDetailsSegue" id="3rN-t5-QhQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLa-8K-FKt">
@@ -195,10 +195,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="N2s-aM-NwR">
-                                <rect key="frame" x="10" y="332" width="580" height="369"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="N2s-aM-NwR">
+                                <rect key="frame" x="10" y="340" width="580" height="240"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet Text" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38B-UC-wIU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet Text" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38B-UC-wIU">
                                 <rect key="frame" x="20" y="170" width="560" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="fbQ-nH-YQy"/>
@@ -358,7 +358,7 @@
                         <outlet property="userDescriptionLabel" destination="DYz-nl-3ry" id="f4S-G8-M8a"/>
                         <outlet property="userImageView" destination="Rna-9p-Tzy" id="b2c-pj-OLf"/>
                         <outlet property="userLocationLabel" destination="WcF-ME-Djb" id="fL2-Om-fnM"/>
-                        <outlet property="userRealNameLabel" destination="0cW-wp-fII" id="bMD-br-OJg"/>
+                        <outlet property="userRealNameLabel" destination="0cW-wp-fII" id="ln2-2Q-U3K"/>
                         <outlet property="userScreenNameLabel" destination="aMW-4N-Iav" id="AxV-De-h0C"/>
                     </connections>
                 </viewController>
@@ -366,16 +366,16 @@
                 <exit id="hdc-I3-XaP" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="Hl2-1F-nLI">
                     <connections>
-                        <segue destination="nqA-wj-hTM" kind="presentation" id="zZH-DU-Wwz"/>
+                        <segue destination="nqA-wj-hTM" kind="presentation" identifier="showUserImageDetailSegue" id="zZH-DU-Wwz"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1499" y="1285"/>
         </scene>
-        <!--View Controller-->
+        <!--User Image Detail View Controller-->
         <scene sceneID="Txl-dr-IX3">
             <objects>
-                <viewController id="nqA-wj-hTM" sceneMemberID="viewController">
+                <viewController id="nqA-wj-hTM" customClass="UserImageDetailViewController" customModule="PragmaticTweets" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Xj-N4-For"/>
                         <viewControllerLayoutGuide type="bottom" id="Svw-Mu-5uY"/>
@@ -384,12 +384,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xcj-GG-4YS">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xcj-GG-4YS">
                                 <rect key="frame" x="160" y="160" width="280" height="280"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="280" id="Dbq-WY-5K1"/>
                                     <constraint firstAttribute="width" constant="280" id="GUL-0J-s8M"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="PIl-Tj-Nog" appends="YES" id="Fge-0Y-NaF"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6A-iH-9Xi">
                                 <rect key="frame" x="282" y="550" width="37" height="30"/>
@@ -409,9 +413,17 @@
                             <constraint firstItem="Svw-Mu-5uY" firstAttribute="top" secondItem="J6A-iH-9Xi" secondAttribute="bottom" constant="20" id="oJN-PA-hgC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userImageView" destination="Xcj-GG-4YS" id="dRs-wZ-zOw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lmx-cB-DTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ztn-9b-SzW" userLabel="Exit" sceneMemberID="exit"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="PIl-Tj-Nog">
+                    <connections>
+                        <action selector="handlePanGesture:" destination="nqA-wj-hTM" id="Bee-UP-guo"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2187" y="1275"/>
         </scene>

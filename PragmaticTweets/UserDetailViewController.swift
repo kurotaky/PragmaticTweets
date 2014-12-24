@@ -16,6 +16,7 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
     @IBOutlet weak var userLocationLabel: UILabel!
     @IBOutlet weak var userDescriptionLabel: UILabel!
     var screenName : String?
+    var userImageURL : NSURL?
     
     @IBAction func unwindToUserDetailVC (segue : UIStoryboardSegue) {
     }
@@ -63,6 +64,17 @@ class UserDetailViewController: UIViewController, TwitterAPIRequestDelegate {
             }
         }
     }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showUserImageDetailSegue" {
+            if let imageDetailVC = segue.destinationViewController as? UserImageDetailViewController {
+                var urlString = self.userImageURL!.absoluteString
+                urlString = urlString!.stringByReplacingOccurrencesOfString("_normal", withString: "")
+                imageDetailVC.userImageURL = NSURL(string: urlString!)
+            }
+        }
+    }
+
     /*
     // MARK: - Navigation
 
