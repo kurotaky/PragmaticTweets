@@ -407,12 +407,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="Xcj-GG-4YS" secondAttribute="centerY" id="Ug3-dg-GJK"/>
                             <constraint firstAttribute="centerX" secondItem="J6A-iH-9Xi" secondAttribute="centerX" id="kuD-qT-roo"/>
                             <constraint firstAttribute="centerX" secondItem="Xcj-GG-4YS" secondAttribute="centerX" id="ljy-Cm-rZq"/>
                             <constraint firstItem="Svw-Mu-5uY" firstAttribute="top" secondItem="J6A-iH-9Xi" secondAttribute="bottom" constant="20" id="oJN-PA-hgC"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ZZS-b1-fOP" appends="YES" id="WNZ-tW-Rsc"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="userImageView" destination="Xcj-GG-4YS" id="dRs-wZ-zOw"/>
@@ -430,6 +434,11 @@
                         <action selector="handleDoubleTapGesture:" destination="nqA-wj-hTM" id="2bA-w0-s9X"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pinchGestureRecognizer id="ZZS-b1-fOP">
+                    <connections>
+                        <action selector="handlePinchGesture:" destination="nqA-wj-hTM" id="hW3-gj-G9F"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2187" y="1275"/>
         </scene>

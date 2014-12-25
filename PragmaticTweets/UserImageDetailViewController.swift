@@ -31,6 +31,16 @@ class UserImageDetailViewController: UIViewController {
         println("after \(self.userImageView.frame)")
     }
 
+    @IBAction func handlePinchGesture(sender: UIPinchGestureRecognizer) {
+        if sender.state == UIGestureRecognizerState.Began {
+            self.preGestureTransform = self.userImageView.transform
+        }
+        if sender.state == UIGestureRecognizerState.Began || sender.state == UIGestureRecognizerState.Changed {
+            let scaledTransform = CGAffineTransformScale(self.preGestureTransform!, sender.scale, sender.scale)
+            self.userImageView.transform = scaledTransform
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
