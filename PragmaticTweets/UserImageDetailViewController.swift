@@ -25,6 +25,12 @@ class UserImageDetailViewController: UIViewController {
         }
     }
 
+    @IBAction func handleDoubleTapGesture(sender: UITapGestureRecognizer) {
+        println("before \(self.userImageView.frame)")
+        self.userImageView.transform = CGAffineTransformIdentity
+        println("after \(self.userImageView.frame)")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

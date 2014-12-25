@@ -393,6 +393,7 @@
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="PIl-Tj-Nog" appends="YES" id="Fge-0Y-NaF"/>
+                                    <outletCollection property="gestureRecognizers" destination="65G-DL-2BJ" appends="YES" id="FrB-Kb-gae"/>
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6A-iH-9Xi">
@@ -424,6 +425,11 @@
                         <action selector="handlePanGesture:" destination="nqA-wj-hTM" id="Bee-UP-guo"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="65G-DL-2BJ">
+                    <connections>
+                        <action selector="handleDoubleTapGesture:" destination="nqA-wj-hTM" id="2bA-w0-s9X"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2187" y="1275"/>
         </scene>
