@@ -8,7 +8,7 @@
         <!--Keyboard View Controller-->
         <scene sceneID="2zd-qs-dnE">
             <objects>
-                <viewController id="fB6-Lh-ik5" customClass="KeyboardViewController" customModule="PragmaticTweepsKeyboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="KeyboardViewController" id="fB6-Lh-ik5" customClass="KeyboardViewController" customModule="PragmaticTweepsKeyboard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hbq-lO-FQa"/>
                         <viewControllerLayoutGuide type="bottom" id="7bN-XU-2Ce"/>

@@ -78,6 +78,8 @@
 		2129FBE819DCD72A00DDDCAF /* PragmaticTweetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PragmaticTweetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2129FBED19DCD72A00DDDCAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2129FBEE19DCD72A00DDDCAF /* PragmaticTweetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PragmaticTweetsTests.swift; sourceTree = "<group>"; };
+		215161921A6491DF00A3ACD8 /* PragmaticTweepsKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PragmaticTweepsKeyboard.entitlements; sourceTree = "<group>"; };
+		215161931A64927700A3ACD8 /* PragmaticTweets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PragmaticTweets.entitlements; sourceTree = "<group>"; };
 		215584311A0C49F900A0BC38 /* ParsedTweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTweetCell.swift; sourceTree = "<group>"; };
 		215A65DD1A0AF5F7009D82FA /* ParsedTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedTweet.swift; sourceTree = "<group>"; };
 		218104D71A5DFBF8001E209F /* PragmaticTweepsKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PragmaticTweepsKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +174,7 @@
 		2129FBD519DCD72A00DDDCAF /* PragmaticTweets */ = {
 			isa = PBXGroup;
 			children = (
+				215161931A64927700A3ACD8 /* PragmaticTweets.entitlements */,
 				2111C4771A4255FA006E744A /* User Image Detail VC */,
 				21FC010D1A3A723D00E42932 /* Size Class Override */,
 				21EF47951A2E910B001A2AFF /* User Detail VC */,
@@ -217,6 +220,7 @@
 		218104D81A5DFBF8001E209F /* PragmaticTweepsKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				215161921A6491DF00A3ACD8 /* PragmaticTweepsKeyboard.entitlements */,
 				218104DB1A5DFBF8001E209F /* KeyboardViewController.swift */,
 				218104D91A5DFBF8001E209F /* Supporting Files */,
 				21E689DF1A5F465B00F99E34 /* KeyboardViewControllerStoryboard.storyboard */,
@@ -316,6 +320,12 @@
 				TargetAttributes = {
 					2129FBD219DCD72A00DDDCAF = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = R49F2456V7;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					2129FBE719DCD72A00DDDCAF = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -323,6 +333,12 @@
 					};
 					218104D61A5DFBF8001E209F = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = R49F2456V7;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -540,10 +556,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PragmaticTweets/PragmaticTweets.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PragmaticTweets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -551,10 +571,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PragmaticTweets/PragmaticTweets.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = PragmaticTweets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -595,6 +619,9 @@
 		218104E11A5DFBF8001E209F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PragmaticTweepsKeyboard/PragmaticTweepsKeyboard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -603,6 +630,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -610,10 +638,14 @@
 		218104E21A5DFBF8001E209F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PragmaticTweepsKeyboard/PragmaticTweepsKeyboard.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PragmaticTweepsKeyboard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
