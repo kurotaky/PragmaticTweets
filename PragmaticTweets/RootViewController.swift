@@ -114,12 +114,16 @@ public class RootViewController: UITableViewController, TwitterAPIRequestDelegat
     func reloadTweets() {
         let twitterParams : Dictionary = ["count":"100"]
         let twitterAPIURL = NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
+        // let twitterAPIURL = NSURL(string: "https://api.twitter.com/1.1/statuses/nakajijapan.json")
         
         let request = TwitterAPIRequest()
         request.sendTwitterRequest(twitterAPIURL, params: twitterParams, delegate: self)
     }
-
+    
     func handleTwitterData(data: NSData!, urlResponse: NSHTTPURLResponse!, error: NSError!, fromRequest: TwitterAPIRequest!) {
+        //var error2: NSError?
+        //NSException.raise("Exception", format:"Error: %@", arguments:getVaList([]))
+        //NSException(name: "no implementation", reason: "implement code here!", userInfo: nil).raise()
         if let dataValue = data {
             var parseError : NSError? = nil
             let jsonObject : AnyObject? = NSJSONSerialization.JSONObjectWithData(dataValue, options: NSJSONReadingOptions(0), error: &parseError)
